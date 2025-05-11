@@ -27,7 +27,7 @@ def unique_mask_values(idx, mask_dir, mask_suffix):
     mask_file = list(mask_dir.glob(idx + mask_suffix + '.*'))[0]
     mask = np.asarray(load_image(mask_file))
     if mask.ndim == 2:
-        return np.unique(mask)
+        return np.unique(mask) # in this case, mask is 2D, unique is [0,1]
     elif mask.ndim == 3:
         mask = mask.reshape(-1, mask.shape[-1])
         return np.unique(mask, axis=0)

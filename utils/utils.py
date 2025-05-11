@@ -8,6 +8,6 @@ def plot_img_and_mask(img, mask):
     ax[0].imshow(img)
     for i in range(classes):
         ax[i + 1].set_title(f'Mask (class {i + 1})')
-        ax[i + 1].imshow(mask == i)
+        ax[i + 1].imshow(mask == i, cmap='gray')
     plt.xticks([]), plt.yticks([])
     plt.show()
